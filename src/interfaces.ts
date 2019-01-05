@@ -1,5 +1,5 @@
 interface Ifn<A> {
-    (...args:any[]): A;
+    (...args: any[]): A;
 }
 
 interface IMethods<A> {
@@ -12,4 +12,10 @@ interface IMethodsPromise<A> {
     left?: Ifn<A>
 }
 
-export {Ifn, IMethods, IMethodsPromise}
+interface Ilens<A, B> {
+    get(obj: A): B,
+
+    set(value: B, obj: A): A
+}
+
+export {Ifn, IMethods, IMethodsPromise, Ilens}
